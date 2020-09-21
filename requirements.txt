@@ -1,0 +1,25 @@
+amqp==2.6.1
+asgiref==3.2.10
+billiard==3.6.3.0
+biopython @ file:///Users/runner/miniforge3/conda-bld/biopython_1599231285939/work
+celery==4.4.7
+certifi==2020.6.20
+chardet==3.0.4
+Django==3.1.1
+django-crispy-forms==1.9.2
+flake8==3.8.3
+gunicorn==20.0.4
+idna==2.10
+kombu==4.6.11
+mkl-fft==1.2.0
+mkl-random==1.1.1
+mkl-service==2.3.0
+numpy @ file:///opt/concourse/worker/volumes/live/c646f6b9-b398-438d-7dc7-c7142e0ba44b/volume/numpy_and_numpy_base_1596235504536/work
+pathlib==1.0.1
+pytz==2020.1
+redis==3.5.3
+requests==2.24.0
+six==1.15.0
+sqlparse==0.3.1
+urllib3==1.25.10
+vine==1.3.0
