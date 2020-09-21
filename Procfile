@@ -1,2 +1,2 @@
 web: gunicorn gnkg.wsgi
-worker: celery worker --app=tasks.app
+worker: celery -A gnkg worker --loglevel=info
