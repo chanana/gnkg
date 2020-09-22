@@ -1,15 +1,17 @@
 #!/bin/bash
-environment_name="gnkgtesting"
+# environment_name="gnkgtesting"
 
 # assumes you have conda
-echo "conda stuff"
+echo "env stuff"
 echo "+++++++++++"
-conda create --name ${environment_name} --yes
-conda activate ${environment_name}
+python -m venv env
+source env/bin/activate
+# conda create --name ${environment_name} --yes
+# conda activate ${environment_name}
 
-echo "install python and other requirements"
-echo "+++++++++++++++++++++++++++++++++++++"
-conda install python=3.8.5 -y
+# echo "install python and other requirements"
+# echo "+++++++++++++++++++++++++++++++++++++"
+# conda install python=3.8.5 -y
 
 pip install -r requirements.txt
 
