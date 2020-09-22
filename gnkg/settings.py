@@ -25,11 +25,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = "nie(s_96746x@90qkew8jjm$a41s9)=lz@a=f8_kw=j&l^!^vm"
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY' + '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-# DEBUG = os.environ.get("DJANGO_DEBUG_VALUE")
+DEBUG = os.environ.get("DJANGO_DEBUG_VALUE")
 
 ALLOWED_HOSTS = ['gnkgtest.herokuapp.com']
 
