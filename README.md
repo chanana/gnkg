@@ -1,0 +1,4 @@
+- length of input is limited to 1000 characters
+- can be uppercase or lowercase, it gets converted to uppercase 
+- simple model with text field for dna string and result, charfield for job name
+- if string is present at all, it will be found. if multiple instances are present, it will return a different result each time.

@@ -1,58 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-</head>
+{% block title %}
+Results
+{% endblock title %}
 
-<body>
-    <div class="container d-flex justify-content-center">
+{% block content %}
+<h1 class="my-4">Results</h1>
 
-        {% for job_name, dna_string, dna_result, state, progress, task_id in info %}
-        <div class="jumbotron text-center col-md-7">
-            <!-- <table>
-                <tbody>
-                    {% for job_name, dna_string, dna_result, state, progress, task_id in info %}
-                    <tr>
-                        <td>{{ job_name }}</td>
-                        <td style="max-width:100px;">{{ dna_string }}</td>
-                        <td>{{ dna_result }}</td>
-                        <td style="width:100%;">
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" style="width: {{ progress }}%"
-                                    aria-valuenow="{{ progress }}" aria-valuemin="0" aria-valuemax="100">{{ state }}
-                                </div>
-                        </td>
-                        <td><a href="{% url 'dnaStrings:delete_job' task_id=task_id %}">
-                                <button class="btn-warning">Delete</button></a>
-                        </td>
-                        <td><a href="{% url 'dnaStrings:cancel_job' task_id=task_id %}">
-                                <button class="btn-danger">Cancel</button></a>
-                        </td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>  -->
-            <h3>
-                {{ job_name }}
-            </h3>
-            {{dna_string}}
-            <div>
-                {{dna_result}}
-            </div>
-            <div role="progressbar" aria-valuenow="{{ progress }}" aria-valuemin="0" aria-valuemax="100">{{ state }}
-            </div>
-            <a href="{% url 'dnaStrings:delete_job' task_id=task_id %}">
-                <button>Delete</button></a>
-            <a href="{% url 'dnaStrings:cancel_job' task_id=task_id %}">
-                <button>Cancel</button></a>
-            <a href="{% url 'dnaStrings:submit' %}"><button class="btn-dark">Back</button></a>
-        </div>
-
-        {% endfor%}
+{% for job_name, dna_string, dna_result, state, progress, task_id in info %}
+<!-- Blog Post -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h2 class="card-title">Job Name: {{ job_name }}</h2>
+    <p class="card-text">DNA Sequence: {{ dna_string }}</p>
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" style="width: {{ progress }}%" aria-valuenow="{{ progress }}"
+        aria-valuemin="0" aria-valuemax="100">{{ state }}</div>
     </div>
-</body>
-
-</html>
+    <p class="cart-text">{{ dna_result }}</p>
+  </div>
+  <div class="card-footer text-muted">
+    <a class="btn btn-warning btn-sm mt-1 mb-1" href="{% url 'dnaStrings:cancel_job' task_id=task_id %}">Cancel</a>
+    <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'dnaStrings:delete_job' task_id=task_id %}">Delete</a>
+  </div>
+</div>
+{% endfor %}
+{% endblock content %}
